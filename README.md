@@ -34,4 +34,11 @@ Follow these steps to set up and run the app locally:
     ```bash
     flutter run
 
+## Download the Shopping App - APK
+
+You can download the latest release of the app from the link below:
+
+- [Download app-release-v1.0.apk](apk/app-release-v1.0.apk)
+
+
 
