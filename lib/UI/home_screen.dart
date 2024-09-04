@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/Models/product.dart';
+import 'package:shopping_app/Views/cart_viewModel.dart';
 
 class HomeScreen extends ConsumerWidget {
   final Product sampleProduct = Product(

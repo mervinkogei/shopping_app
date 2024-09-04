@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/UI/home_screen.dart';
 import 'package:shopping_app/Utils/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -9,6 +10,19 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    launchApp();
+    
+  }
+  void launchApp() async{
+    await Future.delayed(const Duration(seconds: 3));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> HomeScreen()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
