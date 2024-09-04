@@ -4,6 +4,7 @@ class CartItem {
   final Product product;
   final String selectedSize;
   final String selectedColor;
+  int quantity;
   final double price;
 
   CartItem({
@@ -11,5 +12,6 @@ class CartItem {
     required this.selectedSize,
     required this.selectedColor,
     required this.price,
+    this.quantity = 1,
   });
 }

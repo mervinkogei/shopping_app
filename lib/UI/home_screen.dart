@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shopping_app/Models/product.dart';
+import 'package:shopping_app/UI/cart_page.dart';
 import 'package:shopping_app/Views/cart_viewModel.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -38,11 +39,44 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text('Shopping App'),
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Center(
-              child: Text('Cart: ${cartItems.length}'),
-            ),
+          // Cart Icon with Badge
+          Stack(
+            children: [
+              IconButton(
+                icon: Icon(Icons.shopping_cart),
+                onPressed: () {
+                  // Navigate to the Cart Page
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CartPage()),
+                  );
+                },
+              ),
+              if (cartItems.isNotEmpty)
+                Positioned(
+                  right: 8,
+                  top: 8,
+                  child: Container(
+                    padding: EdgeInsets.all(2),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    constraints: BoxConstraints(
+                      minWidth: 16,
+                      minHeight: 16,
+                    ),
+                    child: Text(
+                      '${cartItems.length}',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+            ],
           ),
         ],
       ),
@@ -119,39 +153,6 @@ class HomeScreen extends ConsumerWidget {
                         ),
                       ],
                     ),
-                  ),
-                );
-              },
-            ),
-          ),
-          Divider(),
-          // Cart Section
-          Expanded(
-            child: ListView.builder(
-              itemCount: cartItems.length,
-              itemBuilder: (context, index) {
-                final item = cartItems[index];
-                return ListTile(
-                  leading: Image.network(item.product.imageUrl, width: 50),
-                  title: Text('${item.product.name} (${item.selectedSize}, ${item.selectedColor})'),
-                  subtitle: Text('Quantity: ${item.quantity}, Total: \$${(item.price * item.quantity).toStringAsFixed(2)}'),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.remove_circle, color: Colors.red),
-                        onPressed: () {
-                          cartViewModel.removeFromCart(item);
-                        },
-                      ),
-                      Text('${item.quantity}'),
-                      IconButton(
-                        icon: Icon(Icons.add_circle, color: Colors.green),
-                        onPressed: () {
-                          cartViewModel.addToCart(item.product, item.selectedSize, item.selectedColor);
-                        },
-                      ),
-                    ],
                   ),
                 );
               },
