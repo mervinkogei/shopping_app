@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_riverpod: ^2.3.2
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +54,11 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "images/shopping.jpg"
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
