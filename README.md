@@ -25,7 +25,7 @@ Follow these steps to set up and run the app locally:
    git clone https://github.com/mervinkogei/shopping_app.git
    cd shopping-app
    
-2. **Install Dependecies**:
+2. **Install Dependencies**:
 
     ```bash
     flutter pub get
