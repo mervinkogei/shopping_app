@@ -13,7 +13,7 @@ class CartPage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[350],
-        title: Text('Your Cart'),
+        title: const Text('Your Cart'),
       ),
       body: cartItems.isEmpty
           ? const Center(child: Text('Your cart is empty.'))
@@ -30,14 +30,14 @@ class CartPage extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.remove_circle, color: Colors.red),
+                        icon: const Icon(Icons.remove_circle, color: Colors.red),
                         onPressed: () {
                           cartViewModel.removeFromCart(item);
                         },
                       ),
                       Text('${item.quantity}'),
                       IconButton(
-                        icon: Icon(Icons.add_circle, color: Colors.green),
+                        icon: const Icon(Icons.add_circle, color: Colors.green),
                         onPressed: () {
                           cartViewModel.addToCart(
                               item.product, item.selectedSize, item.selectedColor);

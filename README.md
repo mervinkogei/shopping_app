@@ -1,16 +1,37 @@
-# shopping_app
+# Shopping App
 
-A new Flutter project.
+This is a simple shopping app built using Flutter. The app allows users to browse products, select different variants (sizes and colors), add products to their cart, and manage the cart with a friendly user interface.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Product Variants**: Each product has different sizes and colors to choose from.
+- **Add to Cart**: Users can add items with selected variants to the cart.
+- **Cart Management**: Increase or decrease item quantities directly from the cart.
+- **Cart Badge**: Displays the count of items in the cart with a badge on the cart icon.
+- **Dynamic UI**: Updates the UI dynamically based on user selections and cart actions.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies Used
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Flutter**: Frontend framework used for building the app.
+- **Riverpod**: State management solution used to handle app state, including the cart and product variants.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
+
+Follow these steps to set up and run the app locally:
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/mervinkogei/shopping_app.git
+   cd shopping-app
+   
+2. **Install Dependecies**:
+
+    ```bash
+    flutter pub get
+
+3. **Run the Shopping App**:
+    ```bash
+    flutter run
+
+

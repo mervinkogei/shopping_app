@@ -19,14 +19,16 @@ class _SplashScreenState extends State<SplashScreen> {
     
   }
   void launchApp() async{
-    await Future.delayed(const Duration(seconds: 3));
+    await Future.delayed(const Duration(seconds: 4));
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> HomeScreen()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: AppColors.backgroundColor,
+      ),
       backgroundColor: AppColors.backgroundColor,
       body: Center(
         child: Container(
