@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_app/Utils/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -12,10 +13,10 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      backgroundColor: ,
+      backgroundColor: AppColors.backgroundColor,
       body: Center(
         child: Container(
-          child: Image.asset('images/shoppinng.jpg'),
+          child: Image.asset('images/shopping.jpg'),
         ),
       ),
     );
