@@ -12,10 +12,11 @@ class CartPage extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.grey[350],
         title: Text('Your Cart'),
       ),
       body: cartItems.isEmpty
-          ? Center(child: Text('Your cart is empty.'))
+          ? const Center(child: Text('Your cart is empty.'))
           : ListView.builder(
               itemCount: cartItems.length,
               itemBuilder: (context, index) {
@@ -24,7 +25,7 @@ class CartPage extends ConsumerWidget {
                   leading: Image.network(item.product.imageUrl, width: 50),
                   title: Text('${item.product.name} (${item.selectedSize}, ${item.selectedColor})'),
                   subtitle: Text(
-                      'Quantity: ${item.quantity}, Total: \$${(item.price * item.quantity).toStringAsFixed(2)}'),
+                      'Quantity: ${item.quantity}, Total: Ksh ${(item.price * item.quantity).toStringAsFixed(2)}'),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
